@@ -27,9 +27,9 @@ Feature: Rates Api Testing
       | SGD           | CNY          | A100       | invalid_argument | buy_amount is invalid                           | buy_amount    |
       | QQQ           | CNY          | 100        | invalid_argument | The currency code is not 3-letter ISO-4217 code | sell_currency |
       | SGD           | QQQ          | 100        | invalid_argument | The currency code is not 3-letter ISO-4217 code | buy_currency  |
+      | SGD           | SGD          | 100        | invalid_parameter | invalid_argument | fx_resolver  |
 
-
-    Scenario Outline: security testcases for rates api
+  Scenario Outline: security testcases for rates api
     Given get access
     When get rates for selling "<sell_currency>" to buy "<buy_amount>" "<buy_currency>"
     Then verify the error message in response "<code>" "<message>" "<source>"
