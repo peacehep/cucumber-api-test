@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "required": ["buy_currency","rate_details","conversion_date","created_at","currency_pair","dealt_currency","rate","sell_currency"],
+  "properties": {
+    "buy_currency": {
+      "type": "string"
+    },
+    "conversion_date": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "currency_pair": {
+      "type": "string"
+    },
+    "dealt_currency": {
+      "type": "string"
+    },
+    "rate": {
+      "type": "number"
+    },
+    "rate_details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["buy_amount","sell_amount","rate","level"],
+        "properties": {
+          "buy_amount": {
+            "type": "number"
+          },
+          "level": {
+            "type": "string"
+          },
+          "rate": {
+            "type": "number"
+          },
+          "sell_amount": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "sell_currency": {
+      "type": "string"
+    }
+  }
+}
